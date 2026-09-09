@@ -1,0 +1,1097 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Maritxa Guillen Alva</title>
+
+    <meta
+        name="description"
+        content="Página web personal de Maritxa Guillen Alva, estudiante de Finanzas en EBC y principiante en programación">
+
+    <meta
+        name="keywords"
+        content="Maritxa, Finanzas, programación, música, viajes, restaurantes, hobbies">
+
+    <meta name="author" content="Maritxa Guillen Alva">
+    <meta name="copyright" content="2026 Maritxa Guillen Alva">
+
+    <!-- Conecta Bootstrap con nuestra página -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Conecta nuestro archivo CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.5;
+        }
+
+        img {
+            display: block;
+            margin: 10px 0;
+        }
+
+        ul, ol {
+            margin-left: 20px;
+        }
+
+        .presentacion {
+            font-size: 18px;
+        }
+
+        .imagen-carrusel {
+            height: 400px;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .imagen-carrusel {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+
+<!-- Container organiza y centra el contenido con Bootstrap -->
+<div class="container my-4 p-4 bg-white border rounded shadow-sm">
+
+    <!--Barra de navegacion (Cada Nav crea una barra de navegación sencillo cada href)-->
+    <nav class="my-4 p-3 bg-warning border rounded" aria-label="Navegacion principal">
+
+        <ul class="nav nav-pills">
+
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#inicio">
+                    inicio
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#intereses">
+                    intereses
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#metas">
+                    metas
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#hobbies">
+                    hobbies
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#Capacidades">
+                    Capacidades
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#contacto">
+                    Contacto
+                </a>
+            </li>
+
+        </ul>
+    </nav>
+
+
+    <!-- Inicio -->
+    <!--
+        AQUÍ estaba el bug: el <div class="d-flex..."> se abría ANTES del <section id="inicio">
+        pero se cerraba (</div>) A LA MITAD del section, antes de que el section cerrara.
+        Eso es "cruzar" etiquetas (abrir A, abrir B, cerrar A, cerrar B) y es HTML inválido:
+        el navegador lo "arregla" solo como puede, y por eso el layout se veía raro/inconsistente
+        al cambiar el tamaño de la ventana. No faltaba un div, sobraba uno mal colocado.
+        Como aquí solo había UN elemento adentro, ese d-flex no cumplía ninguna función real,
+        así que lo quité y dejé el section limpio y bien anidado.
+    -->
+
+    <section id="inicio">
+
+        <h1 class="text-primary">
+            Bienvenidos a mi página web
+        </h1>
+
+        <p class="presentacion">
+            Hola soy Maritxa Guillen Alva, estudio Finanzas y me gusta
+            la programación.
+        </p>
+
+        <div class="alert alert-info" role="alert">
+            En esta página encontrarás información sobre mis intereses,
+            capacidades, habilidades, hobbies y metas personales.
+        </div>
+
+    </section>
+
+
+    <!-- Botones de Bootstrap  -->
+    <section class="my-4 p-3 bg-light border rounded">
+
+        <h2>Botones de Bootstrap</h2>
+
+        <div class="d-flex flex-wrap gap-2">
+
+            <button type="button" class="btn btn-primary">
+                Primario
+            </button>
+
+            <button type="button" class="btn btn-secondary">
+                Secundario
+            </button>
+
+            <button type="button" class="btn btn-success">
+                Éxito
+            </button>
+
+            <button type="button" class="btn btn-danger">
+                Peligro
+            </button>
+
+            <button type="button" class="btn btn-warning">
+                Advertencia
+            </button>
+
+        </div>
+
+        <img
+            src="IMG_2562.jpg"
+            alt="Imagen de Maritxa"
+            class="img-fluid rounded"
+            style="max-width: 300px;">
+
+    </section>
+
+
+    <!-- Modal de Bootstrap -->
+    <section class="my-4 p-3 border rounded">
+
+        <h2>Modal de Bootstrap</h2>
+
+        <p>
+            Este modal proporciona información adicional sobre mí.
+        </p>
+
+        <button
+            type="button"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#modalSobreMi">
+
+            Abrir información personal
+
+        </button>
+
+    </section>
+
+
+    <!-- Intereses -->
+    <section
+        id="intereses"
+        class="my-4 p-3 border border-primary rounded bg-light">
+
+        <h2 class="text-primary">
+            Mis intereses
+        </h2>
+
+        <ul>
+            <li>Música</li>
+            <li>Redes sociales y tecnología</li>
+            <li>Viajar y conocer lugares nuevos</li>
+            <li>Probar comida y conocer restaurantes</li>
+        </ul>
+
+    </section>
+
+
+    <!-- Metas personales -->
+    <section
+        id="metas"
+        class="my-4 p-3 border rounded bg-light">
+
+        <h2>
+            Metas personales
+        </h2>
+
+        <ol>
+            <li>Terminar mi carrera</li>
+            <li>Conseguir mi primer trabajo</li>
+            <li>Viajar a Europa</li>
+            <li>Tener mi propia empresa</li>
+        </ol>
+
+    </section>
+
+
+    <!-- Capacidades -->
+    <section
+        id="Capacidades"
+        class="my-4 p-3 border border-success rounded">
+
+        <h2 class="text-success">
+            Capacidades
+        </h2>
+
+        <ul>
+            <li>Liderar un grupo</li>
+            <li>Analizar la parte financiera de una empresa</li>
+            <li>Tomar riesgos</li>
+            <li>Pensamiento analítico</li>
+            <li>Ser muy visual</li>
+        </ul>
+
+    </section>
+
+
+    <!-- Habilidades -->
+    <section
+        id="habilidades"
+        class="my-4 p-3 border border-danger rounded">
+
+        <h2 class="text-danger">
+            Habilidades
+        </h2>
+
+        <ul>
+            <li>Liderazgo</li>
+            <li>Análisis financiero</li>
+            <li>Pensamiento estratégico</li>
+            <li>Programación</li>
+            <li>Manejo de emociones</li>
+        </ul>
+
+    </section>
+
+
+    <!-- Hobbies -->
+    <section
+        id="hobbies"
+        class="my-4 p-3 border border-warning rounded">
+
+        <h2 class="text-warning">
+            Hobbies
+        </h2>
+
+        <ul>
+            <li>Bailar</li>
+            <li>Escuchar música</li>
+            <li>Salir con mi familia y amigos</li>
+            <li>Leer sobre cosas fuera de lo común</li>
+            <li>Leer sobre temas de miedo y cosas antiguas</li>
+        </ul>
+
+    </section>
+
+
+    <!-- Tabla de habilidades -->
+    <section class="my-4">
+
+        <h2>Nivel por área</h2>
+
+        <div class="table-responsive">
+
+            <table class="table table-striped table-bordered">
+
+                <thead>
+                    <tr>
+                        <th>Área</th>
+                        <th>Nivel</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Finanzas</td>
+                        <td>Medio</td>
+                    </tr>
+
+                    <tr>
+                        <td>Programación</td>
+                        <td>Principiante</td>
+                    </tr>
+
+                    <tr>
+                        <td>Pensamiento Estratégico</td>
+                        <td>Medio</td>
+                    </tr>
+
+                    <tr>
+                        <td>Manejar</td>
+                        <td>Principiante</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+    <!-- Información organizada por pestañas -->
+    <section class="my-4 p-3 border rounded">
+
+        <h2>
+            Informacion organizada por pestañas
+        </h2>
+
+        <ul
+            class="nav nav-tabs"
+            id="pestañasperfil"
+            role="tablist">
+
+            <li class="nav-item" role="presentation">
+
+                <button
+                    class="nav-link active"
+                    id="sobre-mi-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#sobre-mi"
+                    type="button"
+                    role="tab"
+                    aria-controls="sobre-mi"
+                    aria-selected="true">
+
+                    sobre mi
+
+                </button>
+
+            </li>
+
+            <li class="nav-item" role="presentation">
+
+                <button
+                    class="nav-link"
+                    id="intereses-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#intereses-pestaña"
+                    type="button"
+                    role="tab"
+                    aria-controls="intereses-pestaña"
+                    aria-selected="false">
+
+                    intereses
+
+                </button>
+
+            </li>
+
+            <li class="nav-item" role="presentation">
+
+                <button
+                    class="nav-link"
+                    id="hobbies-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#hobbies-pestaña"
+                    type="button"
+                    role="tab"
+                    aria-controls="hobbies-pestaña"
+                    aria-selected="false">
+
+                    hobbies
+
+                </button>
+
+            </li>
+
+        </ul>
+
+
+        <!--Row crea una fila para organizar columnas
+        g-3 agrega separacion entre las tarjetas-->
+
+        <div
+            class="tab-content border border-top-0 p-3"
+            id="pestañasperfilContent">
+
+            <div
+                class="tab-pane fade show active"
+                id="sobre-mi"
+                role="tabpanel"
+                aria-labelledby="sobre-mi-tab">
+
+                Soy Maritxa Guillen Alva, estudio Finanzas y me gusta
+                la programación. Estoy aprendiendo programación para
+                desarrollar proyectos y crear mi propia empresa.
+
+            </div>
+
+
+            <div
+                class="tab-pane fade"
+                id="intereses-pestaña"
+                role="tabpanel"
+                aria-labelledby="intereses-tab">
+
+                Me gustan la música, las redes sociales, la tecnología,
+                viajar, conocer lugares nuevos, probar comida y conocer
+                restaurantes.
+
+            </div>
+
+
+            <div
+                class="tab-pane fade"
+                id="hobbies-pestaña"
+                role="tabpanel"
+                aria-labelledby="hobbies-tab">
+
+                Me gusta bailar, escuchar música, salir con mi familia
+                y amigos y leer sobre temas de miedo y cosas antiguas.
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Tarjetas de Bootstrap -->
+    <section class="my-4">
+
+        <h2>
+            Tarjetas de Bootstrap
+        </h2>
+
+        <div class="row">
+
+            <div class="col-md-4">
+
+                <div class="card mb-3">
+
+                    <div class="card-body">
+
+                        <h5 class="card-title">
+                            Sobre mí
+                        </h5>
+
+                        <p class="card-text">
+                            Soy una estudiante de Finanzas con pasión por
+                            la programación y el desarrollo de proyectos
+                            innovadores.
+                        </p>
+
+                        <a
+                            href="#"
+                            class="btn btn-primary">
+
+                            Más información
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="card mb-3">
+
+                    <div class="card-body">
+
+                        <h5 class="card-title">
+                            Finanzas
+                        </h5>
+
+                        <p class="card-text">
+                            Me interesa el mundo de las finanzas y
+                            desarrollar mis conocimientos para mi futuro
+                            profesional.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="card mb-3">
+
+                    <div class="card-body">
+
+                        <h5 class="card-title">
+                            Mi propia empresa
+                        </h5>
+
+                        <p class="card-text">
+                            Una de mis metas es desarrollar mi propia
+                            empresa y contribuir al crecimiento económico.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- CARRUSEL DE BOOTSTRAP -->
+    <!-- ========================================================= -->
+
+    <section class="my-4">
+
+        <h2>
+            Carrusel de Bootstrap
+        </h2>
+
+        <p>
+            Este carrusel muestra imágenes relacionadas con mis
+            intereses.
+        </p>
+
+
+        <div
+            id="CarruselIntereses"
+            class="carousel slide"
+            data-bs-ride="carousel">
+
+
+            <!-- Indicadores -->
+
+            <div class="carousel-indicators">
+
+                <button
+                    type="button"
+                    data-bs-target="#CarruselIntereses"
+                    data-bs-slide-to="0"
+                    class="active"
+                    aria-current="true"
+                    aria-label="Primera imagen">
+                </button>
+
+                <button
+                    type="button"
+                    data-bs-target="#CarruselIntereses"
+                    data-bs-slide-to="1"
+                    aria-label="Segunda imagen">
+                </button>
+
+            </div>
+
+
+            <!-- Imágenes -->
+
+            <div class="carousel-inner">
+
+
+                <!-- Primera imagen -->
+
+                <div class="carousel-item active">
+
+                    <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThow6tXMrnc00IFf-kyFjMTKrGMyjIyUUOCHH5phgxnw&s=10"
+                        class="d-block w-100 imagen-carrusel"
+                        alt="Edición Especial">
+
+                    <div class="carousel-caption d-none d-md-block">
+
+                        <h5>
+                            Edición Especial
+                        </h5>
+
+                        <p>
+                            Uno de mis grupos favoritos.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Segunda imagen -->
+
+                <div class="carousel-item">
+
+                    <img
+                        src="https://i.pinimg.com/originals/dc/b7/a3/dcb7a38f7208b601db0336f786b56e7b.jpg"
+                        class="d-block w-100 imagen-carrusel"
+                        alt="Cantante de Edición Especial">
+
+                    <div class="carousel-caption d-none d-md-block">
+
+                        <h5>
+                            Cantante Edición Especial
+                        </h5>
+
+                        <p>
+                            Arturo Villa, voz de Edición Especial.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Botón anterior -->
+
+            <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#CarruselIntereses"
+                data-bs-slide="prev">
+
+                <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true">
+                </span>
+
+                <span class="visually-hidden">
+                    Anterior
+                </span>
+
+            </button>
+
+
+            <!-- Botón siguiente -->
+
+            <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#CarruselIntereses"
+                data-bs-slide="next">
+
+                <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true">
+                </span>
+
+                <span class="visually-hidden">
+                    Siguiente
+                </span>
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- Información adicional -->
+
+    <section class="my-4">
+
+        <img
+            src="3.png"
+            alt="Imagen"
+            width="300"
+            class="img-fluid rounded">
+
+        <h5>
+
+            Me gusta mucho bailar, escuchar música, salir con mi
+            familia y amigos y también leer sobre cosas fuera de lo
+            común, como temas de miedo y cosas antiguas.
+
+        </h5>
+
+
+        <!-- Hipervínculo -->
+
+        <a
+            href="https://www.nationalgeographic.com/history/article/egyptian-bead-dress-reconstructed"
+            target="_blank"
+            rel="noopener">
+
+            Visita el sitio web de National Geographic para aprender
+            cosas interesantes.
+
+        </a>
+
+
+        <h6>
+
+            Cuando me estreso a veces llego al límite, pero aprendí
+            a controlarlo.
+
+        </h6>
+
+    </section>
+
+
+</div> <!-- cierre de .container -->
+
+
+<!-- Modal "Sobre mí" (solo debe existir uno con este id) -->
+
+<div
+    class="modal fade"
+    id="modalSobreMi"
+    tabindex="-1"
+    aria-labelledby="modalSobreMiLabel"
+    aria-hidden="true">
+
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5
+                    class="modal-title"
+                    id="modalSobreMiLabel">
+
+                    Más información sobre mí
+
+                </h5>
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Cerrar">
+                </button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                Soy Maritxa Guillen Alva. Estudio Finanzas en la
+                Escuela Bancaria y Comercial (EBC) y me gusta la
+                programación. Estoy aprendiendo programación para
+                desarrollar proyectos y crear mi propia empresa.
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal">
+
+                    Cerrar
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Formulario de contacto -->
+
+<div class="container">
+
+    <section id="contacto" class="my-5">
+
+        <h2 class="text-primary">
+            Formulario de contacto
+        </h2>
+
+        <p>
+            Completa los siguientes campos para enviarme un mensaje:
+        </p>
+
+
+        <form class="border rounded p-4 bg-light">
+
+
+            <div class="mb-3">
+
+                <label
+                    for="Nombre"
+                    class="form-label">
+
+                    Nombre Completo:
+
+                </label>
+
+                <input
+                    type="text"
+                    class="form-control"
+                    id="Nombre"
+                    placeholder="Ingresa tu nombre completo"
+                    required>
+
+            </div>
+
+
+            <div class="mb-3">
+
+                <label
+                    for="correo"
+                    class="form-label">
+
+                    Correo electrónico:
+
+                </label>
+
+                <input
+                    type="email"
+                    class="form-control"
+                    id="correo"
+                    placeholder="Ingresa tu correo electrónico"
+                    required>
+
+            </div>
+
+
+            <div class="mb-3">
+
+                <label
+                    for="celular"
+                    class="form-label">
+
+                    Número de celular:
+
+                </label>
+
+                <input
+                    type="text"
+                    class="form-control"
+                    id="celular"
+                    placeholder="Ingresa tu numero de celular"
+                    required>
+
+            </div>
+
+
+            <div class="mb-3">
+
+                <label
+                    for="motivo"
+                    class="form-label">
+
+                    Motivo del mensaje
+
+                </label>
+
+                <select
+                    class="form-select"
+                    id="motivo"
+                    required>
+
+                    <option
+                        value=""
+                        selected
+                        disabled>
+
+                        Selecciona una opcion
+
+                    </option>
+
+                    <option value="programacion">
+                        Programación
+                    </option>
+
+                    <option value="finanzas">
+                        Finanzas
+                    </option>
+
+                    <option value="proyectos">
+                        Proyectos
+                    </option>
+
+                    <option value="otros">
+                        Otros
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="mb-3">
+
+                <label class="form-label d-block">
+                    Temas de interés
+                </label>
+
+                <div class="form-check form-check-inline">
+
+                    <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="temaProgramacion"
+                        name="temas"
+                        value="programacion">
+
+                    <label
+                        class="form-check-label"
+                        for="temaProgramacion">
+
+                        Programación
+
+                    </label>
+
+                </div>
+
+
+                <div class="form-check form-check-inline">
+
+                    <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="temaFinanzas"
+                        name="temas"
+                        value="finanzas">
+
+                    <label
+                        class="form-check-label"
+                        for="temaFinanzas">
+
+                        Finanzas
+
+                    </label>
+
+                </div>
+
+
+                <div class="form-check form-check-inline">
+
+                    <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="temaProyectos"
+                        name="temas"
+                        value="proyectos">
+
+                    <label
+                        class="form-check-label"
+                        for="temaProyectos">
+
+                        Proyectos
+
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <div class="mb-3">
+
+                <label class="form-label d-block">
+                    ¿Cómo prefieres recibir respuesta?
+                </label>
+
+                <div class="form-check form-check-inline">
+
+                    <input
+                        class="form-check-input"
+                        type="radio"
+                        name="preferenciaRespuesta"
+                        id="prefCorreo"
+                        value="correo"
+                        checked>
+
+                    <label
+                        class="form-check-label"
+                        for="prefCorreo">
+
+                        Correo electrónico
+
+                    </label>
+
+                </div>
+
+
+                <div class="form-check form-check-inline">
+
+                    <input
+                        class="form-check-input"
+                        type="radio"
+                        name="preferenciaRespuesta"
+                        id="prefTelefono"
+                        value="telefono">
+
+                    <label
+                        class="form-check-label"
+                        for="prefTelefono">
+
+                        Teléfono
+
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <div class="mb-3">
+
+                <label
+                    for="mensaje"
+                    class="form-label">
+
+                    Mensaje
+
+                </label>
+
+                <textarea
+                    class="form-control"
+                    id="mensaje"
+                    rows="4"
+                    placeholder="Escribe aquí tu mensaje"></textarea>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="btn btn-primary">
+
+                Enviar
+
+            </button>
+
+
+            <button
+                type="reset"
+                class="btn btn-secondary">
+
+                Limpiar
+
+            </button>
+
+        </form>
+
+    </section>
+
+</div>
+
+
+<!-- JavaScript de Bootstrap -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+</script>
+
+</body>
+</html>
+```

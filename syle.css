@@ -1,0 +1,15 @@
+/*Aplica un color de fondo a la página*/
+body {
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+}
+/*Da espacio al contenido principal */
+container {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+/*Color escrito con el nombre del color */
+.presentacion {
+    color: darkblue;
+    font-size: 20px;
+}
