@@ -1,15 +1,7 @@
-/*Aplica un color de fondo a la página*/
-body {
-    background-color: #f2f2f2;
-    font-family: Arial, sans-serif;
-}
-/*Da espacio al contenido principal */
-container {
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-/*Color escrito con el nombre del color */
-.presentacion {
-    color: darkblue;
-    font-size: 20px;
-}
+/* ===================================================== */
+/* style.css                                              */
+/* Todos los estilos de esta página viven dentro del      */
+/* <style> del index.html para que funcionen aunque este  */
+/* archivo esté vacío. Este archivo queda disponible por  */
+/* si más adelante quieres sacar los estilos de ahí.      */
+/* ===================================================== */
